@@ -19,6 +19,10 @@ Gem::Specification.new do |s|
   s.authors       = ['Toru Maesaka']
   s.email         = ['toru@tmaesaka.com']
 
+  s.add_dependency 'faraday', '~> 0.8.0'
+  s.add_dependency 'faraday_middleware', '~> 0.9.0'
+  s.add_dependency 'hashie', '~> 1.2.0'
+
   s.add_development_dependency 'bundler', '~> 1.3'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
