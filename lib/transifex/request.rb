@@ -13,7 +13,8 @@ module Transifex
     end
 
     def get(path, params = {})
-      connection.get(path, params)
+      response = connection.get(path, params)
+      response.body
     end
 
     private
