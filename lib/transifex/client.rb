@@ -12,11 +12,15 @@ module Transifex
     end
 
     def projects
-      get build_path(:v2, '/projects/')
+      get('/projects/').map do |project|
+        Transifex::Project.new(project).tap {|p| p.class = self }
+      end
     end
 
     def project(slug)
-      get build_path(:v2, "/project/#{slug}/")
+      Transifex::Project.new(get("/project/#{slug}/")).tap do |project|
+        project.client = self
+      end
     end
   end
 end
