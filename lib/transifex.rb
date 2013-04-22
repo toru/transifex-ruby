@@ -5,3 +5,4 @@ module Transifex
 end
 
 require 'transifex/request'
+require 'transifex/client'

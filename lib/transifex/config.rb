@@ -2,7 +2,7 @@ require 'transifex/version'
 
 module Transifex
   module Config
-    BASE_URL = ENV['TRANSIFEX_BASE_URL'] || 'https://www.transifex.com/api/2/'
+    BASE_URL = ENV['TRANSIFEX_BASE_URL'] || 'https://www.transifex.com'
     USER_AGENT = "transifex-ruby #{Transifex::VERSION}"
     VALID_OPTIONS = [:username, :password]
 
