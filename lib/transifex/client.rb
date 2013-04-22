@@ -2,14 +2,17 @@ require 'transifex/request'
 
 module Transifex
   class Client
+    include Transifex::Request
+
     def initialize(options = {})
-      @username = options[:username] || Transifex.username
-      @password = options[:password] || Transifex.password
-      @connection = Request.connection(@username, @password)
+      set_credentials(
+        options[:username] || Transifex.username,
+        options[:password] || Transifex.password
+      )
     end
 
     def projects
-      @connection.get('/api/2/projects/')
+      get('/api/2/projects/')
     end
   end
 end

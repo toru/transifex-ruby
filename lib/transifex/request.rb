@@ -3,8 +3,13 @@ require 'faraday_middleware'
 
 module Transifex
   module Request
-    def connection(username, password)
-      @connection ||= make_connection(username, password)
+    def set_credentials(username, password)
+      @username = username
+      @password = password
+    end
+
+    def connection
+      @connection ||= make_connection(@username, @password)
     end
 
     def get(path, params = {})
@@ -37,7 +42,5 @@ module Transifex
         builder.adapter :net_http
       end
     end
-
-    extend self
   end
 end
