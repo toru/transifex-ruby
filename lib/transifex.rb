@@ -7,3 +7,4 @@ end
 require 'transifex/request'
 require 'transifex/client'
 require 'transifex/project'
+require 'transifex/resource'

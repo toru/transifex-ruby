@@ -1,7 +1,5 @@
 module Transifex
   class Project
-    include Transifex::Request
-
     attr_accessor :client, :name, :description, :source_language_code, :slug
 
     def initialize(transifex_data)
@@ -12,11 +10,14 @@ module Transifex
     end
 
     def resources
-      client.get("/project/#{@slug}/resources/")
+      client.get("/project/#{@slug}/resources/").map do |resource|
+        Transifex::Resource.new(@slug, resource).tap {|r| r.client = client }
+      end
     end
 
     def resource(resource_slug)
-      client.get("/project/#{@slug}/resources/#{resource_slug}")
+      resource = client.get("/project/#{@slug}/resources/#{resource_slug}")
+      Transifex::Resource.new(@slug, resource).tap {|r| r.client = client }
     end
   end
 end
