@@ -12,7 +12,11 @@ module Transifex
     end
 
     def projects
-      get('/api/2/projects/')
+      get build_path(:v2, '/projects/')
+    end
+
+    def project(slug)
+      get build_path(:v2, "/project/#{slug}/")
     end
   end
 end
