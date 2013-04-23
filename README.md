@@ -16,7 +16,7 @@ This gem is only available on GitHub at this time. Add the following line to you
 
 ## Quick Examples
 
-### It all beings by requiring
+### It all begins by requiring
 
 ```ruby
 require 'transifex'
