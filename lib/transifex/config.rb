@@ -1,4 +1,5 @@
 require 'transifex/version'
+require 'transifex/response/raise_http_exception'
 
 module Transifex
   module Config
