@@ -13,7 +13,7 @@ module Transifex
 
     def projects
       get('/projects/').map do |project|
-        Transifex::Project.new(project).tap {|p| p.class = self }
+        Transifex::Project.new(project).tap {|p| p.client = self }
       end
     end
 
