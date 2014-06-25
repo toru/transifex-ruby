@@ -16,7 +16,7 @@ module Transifex
     end
 
     def resource(resource_slug)
-      resource = client.get("/project/#{@slug}/resources/#{resource_slug}")
+      resource = client.get("/project/#{@slug}/resource/#{resource_slug}")
       Transifex::Resource.new(@slug, resource).tap {|r| r.client = client }
     end
   end
