@@ -83,6 +83,7 @@ end
 ```ruby
 project_slug = 'ima_project'
 resource_slug = 'ima_resource'
+transifex = Transifex::Client.new
 project = transifex.project(project_slug) # => Transifex::Project object
 resource = project.resource(resource_slug) # => Transifex::Resource object
 resource.translation(:en) # => English Translation (if exists)
