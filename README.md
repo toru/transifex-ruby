@@ -91,6 +91,21 @@ resource.translation(:ja) # => Japanese Translation (if exists)
 ...
 ```
 
+### Retrieving the Language(s) of a particular Project
+
+```ruby
+slug = 'transifex'
+transifex = Transifex::Client.new
+project = transifex.project(slug) # => Transifex::Project object
+project.languages # => Array of Transifex::Language objects
+project.languages.each do |language|
+  language.language_code
+  language.reviewers
+  ...
+end
+
+```
+
 ## Caching
 
 transifex-ruby won't do any read-through caching so your application is responsible for caching the results in order to avoid throwing wasteful HTTP requests. Response caching at the library level may be supported in the future but we're not too concerned about this right now.
