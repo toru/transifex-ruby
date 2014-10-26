@@ -1,0 +1,30 @@
+[
+    {
+        "language_code": "el",
+        "coordinators": [
+            "kbairak",
+            "glezos"
+        ],
+        "translators": [
+            "mpessas",
+            "jkal"
+        ],
+        "reviewers": [
+            "sawidis",
+            "ilias"
+        ]
+    },
+    {
+        "language_code": "hi",
+        "coordinators": [
+            "rajeshr",
+            "rtnpro"
+        ],
+        "translators": [
+            "sayan"
+        ],
+        "reviewers": [
+            "chandankumar"
+        ]
+    }
+]
