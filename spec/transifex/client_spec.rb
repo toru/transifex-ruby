@@ -33,6 +33,54 @@ describe Transifex::Client do
       should be_a Transifex::Project
     end
 
+    describe '#resources' do
+      subject { client.project(slug).resources }
+
+      before do
+        stub_get("/project/#{slug}/resources/").to_return(
+          body: fixture('resources.json'),
+          headers: BASE_HEADERS
+        )
+      end
+
+      it 'returns an array of Resource objects' do
+        subject.each {|p| p.should be_a Transifex::Resource }
+      end
+    end
+
+    describe '#resource' do
+      let(:resource_slug) { 'core' }
+      subject { client.project(slug).resource(resource_slug) }
+
+      before do
+        stub_get("/project/#{slug}/resource/#{resource_slug}").to_return(
+          body: fixture('resource.json'),
+          headers: BASE_HEADERS
+        )
+      end
+
+      it 'returns an Resource object' do
+        subject.should be_a Transifex::Resource
+      end
+
+      describe '#stats' do
+        let(:resource_slug) { 'core' }
+        let(:lang) { 'en' }
+        subject { client.project(slug).resource(resource_slug).stats(lang) }
+
+        before do
+          stub_get("/project/#{slug}/resource/#{resource_slug}/stats/#{lang}").to_return(
+            body: fixture('stats.json'),
+            headers: BASE_HEADERS
+          )
+        end
+
+        it 'returns an Stats object' do
+          subject.should be_a Transifex::Stats
+        end
+      end
+    end
+
     describe '#languages' do
       subject { client.project(slug).languages }
 
