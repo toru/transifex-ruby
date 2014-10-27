@@ -18,5 +18,10 @@ module Transifex
     def translation(lang)
       client.get("/project/#{@project_slug}/resource/#{@slug}/translation/#{lang}/")
     end
+
+    def stats(lang)
+      stats = client.get("/project/#{@project_slug}/resource/#{@slug}/stats/#{lang}")
+      Transifex::Stats.new(stats).tap {|r| r.client = client }
+    end
   end
 end
