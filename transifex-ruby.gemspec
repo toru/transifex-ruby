@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
-  s.authors       = ['Toru Maesaka']
-  s.email         = ['toru@tmaesaka.com']
+  s.authors       = ['Toru Maesaka', 'Jason Barnabe']
+  s.email         = ['toru@tmaesaka.com', 'jason.barnabe@gmail.com']
 
   s.add_dependency 'faraday', '~> 0.8.0'
   s.add_dependency 'faraday_middleware', '~> 0.9.0'
