@@ -21,8 +21,8 @@ describe Transifex::Error do
         expect {
           client.project('xyz')
         }.to raise_error(exception) { |e|
-          e.should be_a_kind_of(Transifex::Error)
-          e.should respond_to(:response)
+          expect(e).to be_a_kind_of(Transifex::Error)
+          expect(e).to respond_to(:response)
         }
       end
     end
