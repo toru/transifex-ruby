@@ -20,7 +20,7 @@ module Transifex
     private
 
     def build_path(version, path)
-      "/api/2/#{path}"
+      "/api/2#{path}"
     end
 
     def make_connection(username, password)
