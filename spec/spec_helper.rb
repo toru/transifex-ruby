@@ -7,7 +7,7 @@ require 'webmock/rspec'
 BASE_HEADERS = { :content_type => 'application/json; charset=utf-8' }
 
 def make_endpoint(path)
-  URI.join(Transifex::Config::BASE_URL, "/api/2/#{path}").to_s
+  URI.join(Transifex::Config::BASE_URL, "/api/2#{path}").to_s
 end
 
 def stub_get(path)
