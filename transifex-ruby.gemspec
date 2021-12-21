@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.authors       = ['Toru Maesaka', 'Jason Barnabe']
   s.email         = ['toru@tmaesaka.com', 'jason.barnabe@gmail.com']
 
-  s.add_dependency 'faraday', '>= 0.8.0'
+  s.add_dependency 'faraday', '>= 0.8.0', '< 2'
   s.add_dependency 'faraday_middleware', '>= 0.9.0'
   s.add_dependency 'hashie', '>= 1.2.0'
 
