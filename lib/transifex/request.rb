@@ -37,8 +37,7 @@ module Transifex
         builder.use Faraday::Response::ParseJson, :content_type => /\bjson$/
         builder.use Transifex::Response::RaiseHttpException
 
-        # Authentiation
-        builder.basic_auth(username, password)
+        builder.request :basic_auth, username, password
 
         # Request Middleware
         builder.use Faraday::Request::Multipart
