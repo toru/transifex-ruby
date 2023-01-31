@@ -1,5 +1,7 @@
 # Ruby Client for the Transifex API
 
+**This project only works with the now-discontinued Transifex API v2. Visit the [Transifex Developer Hub](https://developers.transifex.com/) for current API options.**
+
 ## Introduction
 
 transifex-ruby is a Ruby client library for mechanically accessing Transifex via its API. It is intended to be simple and only provide a primitive interface to the API.
